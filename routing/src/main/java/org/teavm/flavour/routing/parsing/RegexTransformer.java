@@ -85,13 +85,13 @@ public final class RegexTransformer {
     }
 
     public static boolean isValid(char c) {
-        switch (c) {
-            case '/':
-            case '%':
-                return false;
-            default:
-                return true;
-        }
+        return (c < 0x20)
+                || (c == '#')
+                || (c == '%')
+                || (c == '&')
+                || ((c >= '0') && (c <= ';'))
+                || ((c >= '?') && (c <= 'Z'))
+                || (c >= 'a');
     }
 
     static class TransformationVisitor implements NodeVisitor {

@@ -119,8 +119,43 @@ public class RoutingTest {
         assertEquals("bazz", impl.string);
 
         impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/0123456789A/bar"));
+        assertEquals("0123456789A", impl.string);
+    }
+
+    @Test
+    public void parsesStringParamEscapedChars() {
+        StringRouteImpl impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/%21/bar"));
+        assertEquals("!", impl.string);
+
+        impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/%22/bar"));
+        assertEquals("\"", impl.string);
+
+        impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/%24/bar"));
+        assertEquals("$", impl.string);
+
+        impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/%27/bar"));
+        assertEquals("'", impl.string);
+
+        impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/%28/bar"));
+        assertEquals("(", impl.string);
+
+        impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/%29/bar"));
+        assertEquals(")", impl.string);
+
+        impl = new StringRouteImpl();
         assertTrue(impl.parse("foo/%2F/bar"));
         assertEquals("/", impl.string);
+
+        impl = new StringRouteImpl();
+        assertTrue(impl.parse("foo/%20/bar"));
+        assertEquals(" ", impl.string);
     }
 
     @Test
