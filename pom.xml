@@ -18,7 +18,7 @@
 
   <groupId>com.frequal.flavour</groupId>
   <artifactId>teavm-flavour</artifactId>
-  <version>0.3.1</version>
+  <version>0.3.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>TeaVM Flavour - Parent</name>
