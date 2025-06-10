@@ -17,6 +17,7 @@ package org.teavm.flavour.routing;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import java.util.Date;
 import java.util.function.Consumer;
@@ -88,6 +89,20 @@ public class RoutingTest {
 
         impl = new DateRouteImpl();
         assertFalse(impl.parse("date/foo"));
+    }
+
+    @Test
+    public void parsesDateParamWithTime() {
+        DateRouteImpl impl = new DateRouteImpl();
+        assertTrue(impl.parse("date/2015-10-25T01:02:03"));
+        assertEquals("Sun Oct 25 2015", JSDate.create(impl.date.getTime()).toDateString());
+        assertTrue(JSDate.create(impl.date.getTime()).toTimeString().startsWith("01:02:03"));
+    }
+
+    @Test
+    public void parsesDateParamWithInvalidDate() {
+        DateRouteImpl impl = new DateRouteImpl();
+        assertFalse(impl.parse("date/2015"));
     }
 
     @Test
