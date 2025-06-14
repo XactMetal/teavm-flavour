@@ -37,6 +37,11 @@
     </dependency>
     <dependency>
       <groupId>com.frequal.flavour</groupId>
+      <artifactId>teavm-flavour-routing</artifactId>
+      <version>\${flavour.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.frequal.flavour</groupId>
       <artifactId>teavm-flavour-rest</artifactId>
       <version>\${flavour.version}</version>
     </dependency>

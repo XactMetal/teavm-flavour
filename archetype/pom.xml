@@ -25,7 +25,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>TeaVM Flavour - Application archetype</name>
-  <description>Archetype for simple Flavour application</description>
+  <description>Archetype for starting a new Flavour application, including many key features</description>
 
   <build>
     <extensions>
