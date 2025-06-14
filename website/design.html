@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Design of Flavour</title>
+</head>
+<body bgcolor="#ffffff">
+<h1 align=center>Design of Flavour</h1>
+
+Flavour is a single-page app framework for Java and JVM languages.  
+
+<p>
+
+It takes classes, templates, and resources as input, and outputs a JavaScript translation implementing the specified behavior.  The output is capable of running in any modern web browser without any plugins or extensions.
+
+<p>
+
+Flavour is built on top of TeaVM.  TeaVM provides the translation of Java class files (JVM bytecode) to JavaScript.  All the HTML templates (and specially-handled resource files) are bundled into the single <code>classes.js</code> file that is loaded by the first page of a TeaVM application.  Static files recognized by the browser (like CSS and images) are stored in the webapp folder and are loaded by the browser as they are referenced by the HTML.
+
+<p>
+
+Flavour provides numerous features that you would otherwise have to build yourself to make a complete single-page app:
+
+<ul>
+  <li> Routing
+  <li> Templates
+  <li> Components
+      <ul>
+	<li> Provided
+	<li> User-Defined
+      </ul>
+  <li> Expression Language
+  <li> JSON Support
+  <li> Transparent RESTFul Web Service Access
+</ul>
+
+<h2>Modules</h2>
+
+Flavour usese the maven build system.  As with <a href="https://frequal.com/java/GoodMavenProjectHasManyModules.html">any efficient maven project</a>, it is composed of multiple modules:
+
+<ul>
+  <li> expr: The Flavour Expression Language
+  <li> templates: Flavour Template support, including core components for single-page apps
+  <li> widgets: Additional components for more specialized purposes
+  <li> regex: Regular Expressions
+  <li> routing: Path handling and view switching
+  <li> json: Convert Java objects to and from browser JSON objects
+  <li> rest: Wraps JAX-RS web services for seamless consumption from client-side Java code
+  <li> archetype: A starter Flavour application for developers to begin new projects, showing many key features.
+  <li> archetype-minimal: The most basic Flavour application showing only templates and the expression language.  Doesn't include routing or other advanced features.
+</ul>
+
+<h2>FAQ</h2>
+
+<dl>
+  <dt>Does Flavour support WASM?</dt>
+  <dd>At this time, Flavour compiles to JavaScript, for performance reasons.  At present there is no user-driven motivation to switch to WASM &mdash; Flavour projects work great transpiled to JavaScript.  However, TeaVM supports WASM, so it may be possible to switch to WASM in the future.  If you try this out yourself, please post in the Flavour FOrums to let the community know how it worked.</dd>
+</dl>
+
+</body>
+</html>
