@@ -18,7 +18,7 @@
 
   <groupId>com.frequal.flavour</groupId>
   <artifactId>teavm-flavour</artifactId>
-  <version>0.3.2-SNAPSHOT</version>
+  <version>0.3.2</version>
   <packaging>pom</packaging>
 
   <name>TeaVM Flavour - Parent</name>
@@ -43,8 +43,8 @@
   </developers>
 
   <scm>
-    <url>https://sourceforge.net/projects/flavour/tags/teavm-flavour-0.3.1</url>
-    <connection>scm:svn:svn://svn.code.sf.net/p/flavour/tags/teavm-flavour-0.3.1</connection>
+    <url>https://sourceforge.net/projects/flavour/tags/teavm-flavour-0.3.2</url>
+    <connection>scm:svn:svn://svn.code.sf.net/p/flavour/tags/teavm-flavour-0.3.2</connection>
   </scm>
 
   <distributionManagement>
