@@ -1,0 +1,18 @@
+target/
+.project
+.classpath
+.checkstyle
+.settings/
+
+# IntelliJ IDEA
+*.iml
+.idea/uiDesigner.xml
+.idea/workspace.xml
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/kotlinc.xml
+.idea/vcs.xml
+.idea/libraries/*
+.idea/artifacts/*
